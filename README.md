@@ -1,5 +1,7 @@
 # luaToEXE
 
+> **New project:** [luainstaller](https://github.com/Water-Run/luainstaller) as an upgraded replacement: provided as a Python library, including dependency analysis, cross‑platform support, command‑line tools, and a graphical interface.
+
 **The luaToEXE project provides several ready-to-use tools for compiling `.lua` files into standalone, dependency-free `.exe` executables.**  
 These include:
 

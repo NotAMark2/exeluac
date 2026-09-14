@@ -1,12 +1,4 @@
-# luaToEXE
-
-> **New project:** [luainstaller](https://github.com/Water-Run/luainstaller) as an upgraded replacement: provided as a Python library, including dependency analysis, cross‑platform support, command‑line tools, and a graphical interface.
-
-**The luaToEXE project provides several ready-to-use tools for compiling `.lua` files into standalone, dependency-free `.exe` executables.**  
-These include:
-
-1. ***Command-line tool***: [exelua](./exelua/README.md)  
-2. ***Python library***: [lua-to-exe](./lua-to-exe/README.md)  
+**The exeluac is fork of [luaToEXE](https://github.com/Water-Run/luaToEXE) project provides several ready-to-use tools for compiling Lua scripts and Lua compiled files into standalone, dependency-free Windows executables.** 
 
 Please refer to the respective documentation for usage tutorials.
 
@@ -17,4 +9,4 @@ Please refer to the respective documentation for usage tutorials.
 
 *The conversion capability of this project is based on:*
 
-- [srlua](https://github.com/LuaDist/srlua): A tool for packaging `.lua` files into directly executable `.exe` files.
+- [srlua](https://github.com/LuaDist/srlua): A tool for packaging Lua scripts and Lua compiled files into directly executable `.exe` files.

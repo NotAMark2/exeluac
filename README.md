@@ -9,4 +9,4 @@ Please refer to the respective documentation for usage tutorials.
 
 *The conversion capability of this project is based on:*
 
-- [srlua](https://github.com/LuaDist/srlua): A tool for packaging Lua scripts and Lua compiled files into directly executable `.exe` files.
+- [srlua](https://github.com/LuaDist/srlua): A tool for packaging Lua scripts and Lua compiled files into directly executable files.

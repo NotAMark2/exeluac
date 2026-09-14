@@ -1,6 +1,6 @@
 ## Introduction
 
-**`exeluaс` provides a ready-to-use command-line tool for packaging Lua scripts and Lua compiled files into standalone Windows executables.**
+**`exeluac` provides a ready-to-use command-line tool for packaging Lua scripts and Lua compiled files into standalone Windows executables.**
 
 - `exeluac` is available in both 32-bit and 64-bit versions.
 - **The 32-bit version of `exeluac` only includes 32-bit Lua interpreters and can only generate 32-bit executables.**
@@ -14,8 +14,8 @@
 
 ## Installation
 
-1. Download the appropriate version of `exeluac` for your system architecture (32-bit or 64-bit) from the [releases page](https://github.com/Water-Run/luaToEXE/releases).
-2. Extract it to any directory, and add the extracted `exeluac` folder to your system `PATH` environment variable. Restart your computer.
+1. Download the appropriate version of `exeluac` for your system architecture (32-bit or 64-bit) from the [releases page](https://github.com/NotAMark2/exeluac/releases).
+2. Extract it to any directory, and add the extracted `exeluac` folder to your system `PATH` environment variable. Restart your terminal (or open a new one).
 3. Run `exeluac -v` in a terminal. If it displays the version number, the installation was successful.
 
 > Note: The `srlua` folder must be in the same directory as the program.
@@ -26,7 +26,7 @@
 
 ```
 exeluac.exe
-<...>\srlua\
+srlua\
 	\5.1.5-32\
 		srlua.exe
 		srglue.exe
@@ -45,6 +45,8 @@ exeluac.exe
 > The Lua interpreter version is customizable, as long as it follows the `<Lua version>-<Arch>` naming convention.
 > 
 > **The 32-bit version of exeluac only contains folders for 32-bit Lua versions (e.g., 5.1.5-32, 5.4.6-32, etc.), while the 64-bit version contains folders for both 32-bit and 64-bit Lua versions, allowing you to choose the corresponding architecture for the generated executable.**
+>
+> Make sure the selected Lua version matches the architecture of your `exeluac.exe`. A 32-bit `exeluac.exe` cannot use a 64-bit Lua interpreter, and vice versa.
 
 ---
 
@@ -71,42 +73,38 @@ exeluac --list
 Sample output:
 
 ```
-Available Lua versions:
-	5.1.5-32
-	5.1.5-64
-	5.4.6-32
-	5.4.6-64
+exeluac: available lua versions:
+
+	- 5.1.5-32
+	- 5.1.5-64
+	- 5.4.6-32
+	- 5.4.6-64
+
 ```
 
 *(The 32-bit version of exeluac will only list 32-bit Lua versions, such as 5.1.5-32, 5.4.6-32, etc.)*
 
 ### Compile Lua Script to EXE
 
-#### Use Default Lua Version (64-bit exeluac defaults to `5.1.5-64`, 32-bit exeluac defaults to `5.1.5-32`)
-
 ```batch
-exeluac -c hello.lua hello.exe
+exeluac -c hello.lua hello.exe --lua 5.1.5-32
 ```
 
-#### Specify Lua Version
-
-```batch
-exeluac -c hello.lua hello.exe -lua 5.4.6-32
-```
-
-- `-lua <version>` specifies the interpreter version (must match the subfolder name under `srlua/`). If not specified, the 64-bit exeluac defaults to `5.1.5-64`, and the 32-bit exeluac defaults to `5.1.5-32`. If no Lua versions are available, a corresponding message will be displayed.
+- `--lua <version>` specifies the interpreter version (must match the subfolder name under `srlua/`). If no matching version is available, a corresponding error message will be displayed.
 
 ---
 
 ## Command-Line Options
 
+Both Unix-style (`-<short>` / `--<long>`) and DOS-style (`/<short or long>`) flags are accepted.
+
 | Option | Description |
 | --- | --- |
-| `-v`, `--vresion` | Show exeluac version |
-| `-h`, `--help` | Show help information |
-| `--list` | List all available Lua versions in the `srlua` folder |
-| `-c`, `--compilate` | Compile the specified Lua file to exe |
-| `--lua` `<version>` | Specify Lua version (optional, used with `-c`) |
+| `-v`, `--version`, `/v`, `/version` | Show exeluac version |
+| `-h`, `--help`, `/h`, `/help` | Show help information |
+| `--list`, `/list` | List all available Lua versions in the `srlua` folder |
+| `-c`, `--compilate`, `/c`, `/compilate` | Compile the specified Lua file to exe |
+| `--lua` `<version>`, `/lua` `<version>` | Specify Lua version (used with `-c`, `--compilate`, `/c`, `/compilate`) |
 
 ---
 
